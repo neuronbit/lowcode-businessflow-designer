@@ -1,15 +1,20 @@
 {
-  "componentName": "Page",
+  "version": "1.0.0",
+  "componentName": "Flow",
   "id": "node_dockcviv8fo1",
   "fileName": "",
-  "props": {},
+  "props": {
+    "name": "test",
+    "type": "process",
+    "desc": "this is a demo flow"
+  },
   "children": [
     {
       "id": "node-start",
-      "componentName": "StartEnd",
-      "title": "开始节点",
+      "componentName": "Start",
+      "title": "开始",
       "props": {
-        "name": "开始节点",
+        "name": "开始",
         "position": {
           "x": 82,
           "y": 71
@@ -18,10 +23,12 @@
     },
     {
       "id": "node_ockn610kx9m",
-      "componentName": "SendEmail",
+      "componentName": "AutoTask",
       "title": "发送邮件",
       "props": {
-        "name": "发送邮件",
+        "name": "sendEmail",
+        "desc": "发送邮件",
+        "type": "spring-bean",
         "position": {
           "x": 84,
           "y": 263
@@ -30,10 +37,10 @@
     },
     {
       "id": "node-end",
-      "componentName": "StartEnd",
-      "title": "结束节点",
+      "componentName": "End",
+      "title": "结束",
       "props": {
-        "name": "结束节点",
+        "name": "结束",
         "position": {
           "x": 82,
           "y": 455

@@ -1,21 +1,21 @@
 {
   "packages": [
     {
-      "package": "@alilc/lce-x6-items",
-      "version": "1.0.7",
-      "library": "AlilcLceX6Items",
+      "package": "compileflow-material",
+      "version": "0.1.0",
+      "library": "CompileFlow",
       "urls": [
-        "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/render/default/view.js",
-        "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/render/default/view.css"
+        "http://compile.flow/assets/render/default/view.js",
+        "http://compile.flow/assets/render/default/view.css"
       ],
       "editUrls": [
-        "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/view.js",
-        "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/view.css"
+        "http://compile.flow/assets/view.js",
+        "http://compile.flow/assets/view.css"
       ],
       "advancedUrls": {
         "default": [
-          "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/render/default/view.js",
-          "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/render/default/view.css"
+          "http://compile.flow/assets/render/default/view.js",
+          "http://compile.flow/assets/render/default/view.css"
         ]
       },
       "advancedEditUrls": {}
@@ -23,18 +23,18 @@
   ],
   "components": [
     {
-      "exportName": "AlilcLceX6ItemsMeta",
+      "exportName": "CompileflowMaterialMeta",
       "npm": {
-        "package": "@alilc/lce-x6-items",
-        "version": "1.0.7"
+        "package": "compileflow-material",
+        "version": "0.1.0"
       },
-      "url": "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/meta.js",
+      "url": "http://compile.flow/assets/meta.js",
       "urls": {
-        "default": "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/meta.js"
+        "default": "http://compile.flow/assets/meta.js"
       },
       "advancedUrls": {
         "default": [
-          "https://uipaas-assets.com/prod/npm/@alilc/lce-x6-items/1.0.7/build/lowcode/meta.js"
+          "http://compile.flow/assets/meta.js"
         ]
       }
     }

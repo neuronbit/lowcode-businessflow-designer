@@ -1,0 +1,372 @@
+{
+  "componentName": "Flow",
+  "id": "node_dockcviv8fo1",
+  "docId": "doclr917eni",
+  "props": {
+    "name": "test",
+    "type": "process",
+    "desc": "this is a demo flow",
+    "exceptionHandler": {
+      "name": "",
+      "type": "spring-bean",
+      "bean": "",
+      "returns": {
+        "returnName": "",
+        "returnType": "",
+        "returnDesc": ""
+      }
+    },
+    "stopOnChecker": {
+      "name": "",
+      "type": "spring-bean",
+      "bean": "",
+      "returns": {
+        "returnName": "",
+        "returnType": "",
+        "returnDesc": ""
+      }
+    },
+    "finallyHandler": {
+      "name": "",
+      "type": "spring-bean",
+      "bean": "",
+      "returns": {
+        "returnName": "",
+        "returnType": "",
+        "returnDesc": ""
+      }
+    }
+  },
+  "version": "1.0.0",
+  "fileName": "",
+  "hidden": false,
+  "title": "",
+  "isLocked": false,
+  "condition": true,
+  "conditionGroup": "",
+  "children": [
+    {
+      "componentName": "Start",
+      "id": "node-start",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "开始",
+        "position": {
+          "x": -98,
+          "y": -24.5
+        }
+      },
+      "title": "开始",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "AutoTask",
+      "id": "node_ockn610kx9m",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "sendEmail",
+        "desc": "发送邮件",
+        "type": "spring-bean",
+        "position": {
+          "x": 132,
+          "y": 333
+        }
+      },
+      "title": "发送邮件",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "End",
+      "id": "node-end",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "结束",
+        "position": {
+          "x": -73,
+          "y": 665
+        }
+      },
+      "title": "结束",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_ockn610kx9b",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node-start",
+        "target": "node_oclr917eni1",
+        "sourcePortId": "b",
+        "targetPortId": "t",
+        "decisionExpression": "true"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_ockn610kx9a",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node_ockn610kx9m",
+        "target": "node-end",
+        "sourcePortId": "b",
+        "targetPortId": "t"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "SwitchTask",
+      "id": "node_oclr917eni1",
+      "docId": "doclr917eni",
+      "props": {
+        "position": {
+          "x": -225,
+          "y": 110
+        },
+        "ports": [
+          {
+            "id": "t",
+            "group": "top"
+          },
+          {
+            "id": "r",
+            "group": "right"
+          },
+          {
+            "id": "b",
+            "group": "bottom",
+            "attrs": {
+              "value": {
+                "enumValue": "default",
+                "enumDesc": "default"
+              }
+            }
+          },
+          {
+            "id": "l",
+            "group": "left"
+          }
+        ],
+        "name": "",
+        "type": "spring-bean",
+        "bean": "org.example.model.checker.JustForTest",
+        "method": "org.example.model.checker.JustForTest.check",
+        "params": [
+          {
+            "paramType": "java.lang.String",
+            "paramName": "password",
+            "paramSource": ""
+          }
+        ],
+        "returns": {
+          "returnName": "output",
+          "returnType": "org.example.model.checker.Status",
+          "returnDesc": ""
+        },
+        "enums": [
+          {
+            "enumValue": "OK",
+            "enumDesc": "OK"
+          },
+          {
+            "enumValue": "FAILED",
+            "enumDesc": "FAILED"
+          }
+        ]
+      },
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_oclr917eni2",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node_oclr917eni1",
+        "target": "node_ockn610kx9m",
+        "sourcePortId": "b",
+        "targetPortId": "t"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "AutoTask",
+      "id": "node_oclr917eni3",
+      "docId": "doclr917eni",
+      "props": {
+        "position": {
+          "x": -290,
+          "y": 333
+        },
+        "ports": [
+          {
+            "id": "t",
+            "group": "top"
+          },
+          {
+            "id": "r",
+            "group": "right"
+          },
+          {
+            "id": "b",
+            "group": "bottom"
+          },
+          {
+            "id": "l",
+            "group": "left"
+          }
+        ],
+        "name": "",
+        "type": "spring-bean",
+        "bean": "",
+        "returns": {
+          "returnName": "",
+          "returnType": "",
+          "returnDesc": ""
+        }
+      },
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_oclr917eni4",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node_oclr917eni1",
+        "target": "node_oclr917eni3",
+        "sourcePortId": "b",
+        "targetPortId": "t"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "AutoTask",
+      "id": "node_oclr917eni5",
+      "docId": "doclr917eni",
+      "props": {
+        "position": {
+          "x": -690,
+          "y": 310
+        },
+        "ports": [
+          {
+            "id": "t",
+            "group": "top"
+          },
+          {
+            "id": "r",
+            "group": "right"
+          },
+          {
+            "id": "b",
+            "group": "bottom"
+          },
+          {
+            "id": "l",
+            "group": "left"
+          }
+        ],
+        "name": "",
+        "type": "spring-bean",
+        "bean": "",
+        "returns": {
+          "returnName": "",
+          "returnType": "",
+          "returnDesc": ""
+        }
+      },
+      "hidden": false,
+      "title": "",
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_oclr917eni6",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node_oclr917eni1",
+        "target": "node_oclr917eni5",
+        "sourcePortId": "b",
+        "targetPortId": "t"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_oclr917eni7",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node_oclr917eni3",
+        "target": "node-end",
+        "sourcePortId": "b",
+        "targetPortId": "t"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    },
+    {
+      "componentName": "Line",
+      "id": "node_oclr917eni8",
+      "docId": "doclr917eni",
+      "props": {
+        "name": "线",
+        "source": "node_oclr917eni5",
+        "target": "node-end",
+        "sourcePortId": "b",
+        "targetPortId": "l"
+      },
+      "title": "线",
+      "hidden": false,
+      "isLocked": false,
+      "condition": true,
+      "conditionGroup": ""
+    }
+  ]
+}

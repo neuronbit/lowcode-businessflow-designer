@@ -6,8 +6,9 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "build-scripts start --disable-reload --port 5556",
-    "build": "build-scripts build",
+    "start": "cross-env TARGET=index build-scripts start --disable-reload --port 5556",
+    "build": "cross-env TARGET=index build-scripts build",
+    "local-build": "cross-env TARGET=index.local build-scripts build",
     "prepublishOnly": "npm run build",
     "pub": "node ./scripts/watchdog.js && npm pub"
   },
@@ -17,14 +18,16 @@
   "config": {},
   "dependencies": {
     "@alilc/lce-graph-core": "^1.0.10",
+    "@alilc/lce-graph-materials-pane": "^1.0.10",
     "@alilc/lce-graph-tools": "^1.0.10",
-    "@alilc/lce-graph-x6-designer": "^1.0.10",
-    "@alilc/lce-graph-materials-pane": "^1.0.10"
+    "@alilc/lce-graph-x6-designer": "file:../../lowcode-graph/packages/plugin-x6-designer",
+    "@alilc/lowcode-code-generator": "^1.1.6",
+    "ali-lowcode-solution-bpm": "file:../../bpm"
   },
   "devDependencies": {
     "@alib/build-scripts": "^0.1.18",
     "@alilc/lowcode-engine": "^1.1.2",
-    "@alilc/lowcode-engine-ext": "^1.0.0",
+    "@alilc/lowcode-engine-ext": "file:../../lowcode-engine-ext",
     "@alilc/lowcode-types": "^1.1.1",
     "@types/events": "^3.0.0",
     "@types/react": "^16.8.3",
@@ -34,7 +37,9 @@
     "build-plugin-fusion": "^0.1.0",
     "build-plugin-moment-locales": "^0.1.0",
     "build-plugin-react-app": "^1.1.2",
+    "cross-env": "^7.0.3",
     "fs-extra": "^10.0.1",
+    "lodash": "^4.17.21",
     "tsconfig-paths-webpack-plugin": "^3.2.0"
   }
 }
