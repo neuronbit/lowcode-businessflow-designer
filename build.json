@@ -1,27 +1,6 @@
 {
   "entry": {
-    "demo-general/index" : "./demo-general/src/index.ts",
-    "demo-general/preview" : "./demo-general/src/preview.tsx",
-
-    "demo-basic-antd/index" : "./demo-basic-antd/src/index.ts",
-    "demo-basic-antd/preview" : "./demo-basic-antd/src/preview.tsx",
-
-    "demo-basic-fusion/index" : "./demo-basic-fusion/src/index.ts",
-    "demo-basic-fusion/preview" : "./demo-basic-fusion/src/preview.tsx",
-
-    "demo-next-pro/index" : "./demo-next-pro/src/index.ts",
-    "demo-next-pro/preview" : "./demo-next-pro/src/preview.tsx",
-
-    "demo-node-extended-actions/index" : "./demo-node-extended-actions/src/index.ts",
-    "demo-node-extended-actions/preview" : "./demo-node-extended-actions/src/preview.tsx",
-
-    "demo-lowcode-component/index": "./demo-lowcode-component/src/index.ts",
-    "demo-lowcode-component/preview": "./demo-lowcode-component/src/preview.tsx",
-
-    "demo-workspace/index": "./demo-workspace/src/index.ts",
-    "demo-workspace/preview": "./demo-workspace/src/preview.tsx",
-
-    "demo-graph-x6/index": "./demo-graph-x6/src/index.ts"
+    "index": "./src/index.ts"
   },
   "vendor": false,
   "devServer": {
@@ -48,6 +27,13 @@
         "locales": [
           "zh-cn"
         ]
+      }
+    ],
+    [
+      "build-plugin-fusion",
+      {
+        "themePackage": "@alifd/theme-lowcode-light",
+        "externalNext": "umd"
       }
     ],
     "./build.plugin.js"
