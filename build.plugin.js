@@ -3,7 +3,6 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const { version } = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
-const target = process.env.TARGET
 
 module.exports = ({ onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
@@ -20,28 +19,28 @@ module.exports = ({ onGetWebpackConfig }) => {
     });
 
     config
-    .plugin('index')
-    .use(HtmlWebpackPlugin, [
-      {
-        inject: false,
-        minify: false,
-        templateParameters: {
-          version,
-        },
-        template: require.resolve('./public/'+target+'.ejs'),
-        filename: 'index.html',
-      },
-    ]);
+        .plugin('index')
+        .use(HtmlWebpackPlugin, [
+          {
+            inject: false,
+            minify: false,
+            templateParameters: {
+              version,
+            },
+            template: require.resolve('./public/index.ejs'),
+            filename: 'index.html',
+          },
+        ]);
 
     config.plugins.delete('hot');
     config.devServer.hot(false);
 
     config.module // fixes https://github.com/graphql/graphql-js/issues/1272
-      .rule('mjs$')
-      .test(/\.mjs$/)
-      .include
+        .rule('mjs$')
+        .test(/\.mjs$/)
+        .include
         .add(/node_modules/)
         .end()
-      .type('javascript/auto');
+        .type('javascript/auto');
   });
 };

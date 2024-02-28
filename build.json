@@ -29,13 +29,6 @@
         ]
       }
     ],
-    [
-      "build-plugin-fusion",
-      {
-        "themePackage": "@alifd/theme-lowcode-light",
-        "externalNext": "umd"
-      }
-    ],
     "./build.plugin.js"
   ]
 }
