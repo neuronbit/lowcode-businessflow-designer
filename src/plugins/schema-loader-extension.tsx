@@ -1,8 +1,9 @@
-import {IPublicModelPluginContext} from '@alilc/lowcode-types';
+import {IPublicEnumTransformStage, IPublicModelPluginContext} from '@alilc/lowcode-types';
 import {event} from "@alilc/lowcode-engine";
-import {sortBy} from "lodash";
+import {debounce, sortBy} from "lodash";
 import {IDesigner} from '@alilc/lce-graph-x6-designer';
-import {loadSchema} from "../services/mockService";
+import {saveSchema} from "../services/mockService";
+
 /**
  * X6 Designer 业务自定义扩展插件
  */
@@ -41,6 +42,19 @@ function pluginSchemaLoader(ctx: IPublicModelPluginContext) {
                 ctx.project.openDocument(schema);
                 const x6Designer = ctx.plugins['plugin-x6-designer'] as IDesigner;
                 x6Designer.getGraph().centerContent();
+                ctx.project.currentDocument?.onAddNode(node => {
+                    console.log('node add....');
+                    debounce(saveSchema, 5000)(ctx.project.getCurrentDocument()?.exportSchema(IPublicEnumTransformStage.Save));
+                });
+                ctx.project.currentDocument?.onRemoveNode(node => {
+                    console.log('node removed....');
+                    debounce(saveSchema, 5000)(ctx.project.getCurrentDocument()?.exportSchema(IPublicEnumTransformStage.Save));
+                });
+                ctx.project.currentDocument?.onChangeNodeProp(info => {
+                    console.log('node prop changed....');
+                    debounce(saveSchema, 5000)(ctx.project.getCurrentDocument()?.exportSchema(IPublicEnumTransformStage.Save));
+                });
+
             })
         },
         destroy() {
