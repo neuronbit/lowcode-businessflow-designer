@@ -20,13 +20,13 @@
     "@alilc/lce-graph-core": "^1.0.10",
     "@alilc/lce-graph-materials-pane": "^1.0.10",
     "@alilc/lce-graph-tools": "^1.0.10",
-    "@alilc/lce-graph-x6-designer": "^1.0.10",
+    "@alilc/lce-graph-x6-designer": "file:../lowcode-graph/packages/plugin-x6-designer",
     "@alilc/lowcode-code-generator": "^1.1.6"
   },
   "devDependencies": {
     "@alib/build-scripts": "^0.1.18",
     "@alilc/lowcode-engine": "^1.1.2",
-    "@alilc/lowcode-engine-ext": "^1.0.0",
+    "@alilc/lowcode-engine-ext": "file:../lowcode-engine-ext",
     "@alilc/lowcode-types": "^1.1.1",
     "@types/events": "^3.0.0",
     "@types/react": "^16.8.3",
