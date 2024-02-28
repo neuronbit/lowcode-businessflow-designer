@@ -3,6 +3,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const { version } = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
+const target = process.env.TARGET
 
 module.exports = ({ onGetWebpackConfig }) => {
   onGetWebpackConfig((config) => {
@@ -27,7 +28,7 @@ module.exports = ({ onGetWebpackConfig }) => {
             templateParameters: {
               version,
             },
-            template: require.resolve('./public/index.ejs'),
+            template: require.resolve('./public/'+target+'.ejs'),
             filename: 'index.html',
           },
         ]);

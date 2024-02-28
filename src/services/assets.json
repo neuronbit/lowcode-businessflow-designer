@@ -3,7 +3,7 @@
     {
       "package": "lowcode-businessflow-material",
       "version": "0.1.0",
-      "library": "CompileFlow",
+      "library": "lowcode-businessflow-material",
       "urls": [
         "http://compile.flow/assets/render/default/view.js",
         "http://compile.flow/assets/render/default/view.css"
@@ -23,7 +23,7 @@
   ],
   "components": [
     {
-      "exportName": "CompileflowMaterialMeta",
+      "exportName": "LowcodeBusinessflowMaterialMeta",
       "npm": {
         "package": "lowcode-businessflow-material",
         "version": "0.1.0"
