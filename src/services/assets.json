@@ -1,7 +1,7 @@
 {
   "packages": [
     {
-      "package": "compileflow-material",
+      "package": "lowcode-businessflow-material",
       "version": "0.1.0",
       "library": "CompileFlow",
       "urls": [
@@ -25,7 +25,7 @@
     {
       "exportName": "CompileflowMaterialMeta",
       "npm": {
-        "package": "compileflow-material",
+        "package": "lowcode-businessflow-material",
         "version": "0.1.0"
       },
       "url": "http://compile.flow/assets/meta.js",
